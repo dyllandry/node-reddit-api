@@ -1,0 +1,11 @@
+{
+  "name": "node-reddit-api",
+  "version": "1.0.0",
+  "description": "Retrieves 25 hot r/programming posts and outputs to the browser.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dylan Landry",
+  "license": "MIT"
+}

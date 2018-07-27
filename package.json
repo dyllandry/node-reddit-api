@@ -8,5 +8,7 @@
   },
   "author": "Dylan Landry",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "data-store": "^3.0.3"
+  }
 }

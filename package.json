@@ -9,7 +9,7 @@
   "author": "Dylan Landry",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0",
-    "data-store": "^3.0.3"
+    "data-store": "^3.0.3",
+    "express": "^4.16.3"
   }
 }

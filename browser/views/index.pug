@@ -1,0 +1,7 @@
+include includes/head.pug
+body
+    ul
+        each post in posts
+            a(href=post.data.url)
+                li= post.data.title
+    

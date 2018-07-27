@@ -9,10 +9,11 @@ module.exports = new Promise(function(resolve, reject) {
 
     // The Reddit API requires passing a random 30 character ASCII device id.
     if (!store.hasOwn('deviceId') || !store.has('deviceId')) {
-        const deviceId = _generateAscii(30);
+        const deviceId = _generateAlphaNumeric(30);
         store.set('deviceId', deviceId);
     }
 
+    // UPGRADE: If over token expiration time use promise structured token req.
     // Https post options for our token request
     const options = {
         hostname: 'www.reddit.com',
@@ -33,12 +34,12 @@ module.exports = new Promise(function(resolve, reject) {
         // Convert completed response string to json on 'end' event.
         response.on('end', () => {
             const jsonBody = JSON.parse(responseBody);
-            console.log(jsonBody);
+            resolve(jsonBody.access_token);
         });
     });
 
     request.on('error', (error) => {
-        console.log(error);
+        reject(error);
     });
 
     /* How we write data into our POST request.
@@ -47,24 +48,17 @@ module.exports = new Promise(function(resolve, reject) {
     */
     let postData = '';
     postData += 'grant_type=https://oauth.reddit.com/grants/installed_client';
-    postData += '&device_id=abdjfkeuwidjskeyitow';
+    postData += '&device_id=' + store.get('deviceId');
     request.write(postData)
     request.end();
 });
 
-// FIXME: Reddit OAuth2 says ascii is incorrect when passed to retrieve token.
-function _generateAscii(length) {
+// Functions meant to be used only by the internal module are prefixed with '_'
+function _generateAlphaNumeric(length) {
     let string = '';
+    const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     for (let i = 0; i < length; i++) {
-        // ascii is first 128 unicode characters
-        string += String.fromCharCode(_getRandomInt(0, 129));
+        string += chars[Math.floor(Math.random() * characters.length)];
     }
     return string;
 }
-
-// max: exclusive, min: inclusive
-function _getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min; 
-  }

@@ -3,6 +3,7 @@ const Https = require('https');
 // NPM package 'data-store' used to store data.
 const Store = require('data-store');
 
+// There are many good JavaScript promise guides if this is confusing.
 module.exports = new Promise(function(resolve, reject) {
     // Creates config.json if it doesn't exist.
     const store = new Store('config', {base: __dirname});
@@ -13,7 +14,7 @@ module.exports = new Promise(function(resolve, reject) {
         store.set('deviceId', deviceId);
     }
 
-    // UPGRADE: If over token expiration time use promise structured token req.
+    // UPGRADE: Only request a new token if the previous expired.
     // Https post options for our token request
     const options = {
         hostname: 'www.reddit.com',
@@ -59,7 +60,7 @@ function _generateAlphaNumeric(length) {
     let string = '';
     const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     for (let i = 0; i < length; i++) {
-        string += chars[Math.floor(Math.random() * characters.length)];
+        string += chars[Math.floor(Math.random() * chars.length)];
     }
     return string;
 }

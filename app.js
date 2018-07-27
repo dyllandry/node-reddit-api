@@ -1,8 +1,14 @@
 const RedditApi = require('./reddit_api');
 
 RedditApi.Authenticate.then((token) => {
-    console.log(token);
-}).catch(error => {
+
+    RedditApi.GetHot(token).then(posts  => {
+        console.log(posts);
+    }).catch(logError)
+
+}).catch(logError);
+
+function logError(error) {
     console.log(error);
     process.exit(); 
-});
+}

@@ -1,4 +1,5 @@
 module.exports = {
-    Authenticate: require('./authentication')
+    Authenticate: require('./authentication'),
+    GetHot: require('./endpoints').GetHot
 }
 

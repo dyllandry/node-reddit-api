@@ -9,6 +9,9 @@ const Path = require('path');
 App.set('view engine', 'pug');
 // Set view directory.
 App.set('views', Path.join(__dirname, 'browser/views'));
+// Set public directory for serving static files like stylesheets.
+App.use(Express.static(Path.join('browser', 'views', 'styles')));
+App.use(Express.static(Path.join('browser', 'views', 'fonts')));
 
 // Set '/' route for GET HTTP requests w/ express. Lookup routing if confused.
 App.get('/', (request, response) => {

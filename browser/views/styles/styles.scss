@@ -1,5 +1,116 @@
-.post {
-    .title {
-        color: blue;
+$background: rgb(56, 56, 68);
+$foreground: rgb(45, 45, 54);
+$priority: rgb(255, 115, 0);
+$primary: rgb(231, 231, 231);
+$secondary: rgb(177, 177, 177);
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('Roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('Roboto/Roboto-Thin.ttf');
+}
+
+body {
+    background-color: $background;
+    margin: 0px 0 0 0;
+    font-family: 'Roboto-Regular';
+
+    #mainContent {
+        background-color: $foreground;
+        max-width: 800px;
+        margin: 50px auto 50px auto;
+        padding: 0 10px 0 10px;
+        border-radius: 5px;
+        box-shadow: black 0px 0px 10px -5px;
+
+        h1 {
+            margin: 0px 0 15px 5px;
+            padding-top: 10px;
+            color: $primary;
+            font-family: 'Roboto-Medium';
+        }      
+
+        a:visited {
+            color: $secondary;
+        }
+
+        .post {
+            color: $primary;
+            padding: 10px 5px 10px 0px;
+            display: flex;
+
+            .linkArea {
+                display: flex;
+                flex-direction: column;
+                padding-left: 10px;
+            }
+
+            .title {
+                font-size: 1.25rem;
+                padding-bottom: 5px;
+            }
+
+            .data {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex-shrink: 0;
+                justify-content: space-between;
+
+                .score {
+                    color: $priority;
+                    font-size: 1.5rem;
+                    margin: auto;
+                }
+    
+                .date, .time {
+                    color: $secondary;
+                    font-family: 'Roboto-Thin';
+                }
+            }
+
+            .comments {
+                font-family: 'Roboto-Thin';
+            }
+        }
+
+        .title:hover, .comments:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
     }
+
+    #mainContent .post:not(:last-child) {
+        border: solid $background;
+        border-width: 0 0 2px 0;
+    }
+}
+a {
+    color: $primary;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+.primary {
+    color: $primary;
+}
+
+.secondary {
+    color: $secondary;
+}
+
+.priority {
+    color: $priority;
+    font-family: 'Roboto-Regular';
 }

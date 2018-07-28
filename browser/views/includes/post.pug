@@ -1,0 +1,12 @@
+.post
+    .data
+        .score= post.data.score
+        .date= post.data.created_utc
+    .linkArea
+        a(href=post.data.url)
+            .title= post.data.title
+        a.comments(href="http://reddit.com"+post.data.permalink)
+            span.secondary 
+                |comments (
+                span.priority= post.data.num_comments
+                |)

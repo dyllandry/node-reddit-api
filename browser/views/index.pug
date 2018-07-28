@@ -1,7 +1,8 @@
 include includes/head.pug
 body
-    ul
-        each post in posts
-            a(href=post.data.url)
-                li= post.data.title
-    
+    #mainContent
+        h1 r/programming
+            span.priority /hot
+        .mainContent
+            each post in posts
+                include includes/post.pug

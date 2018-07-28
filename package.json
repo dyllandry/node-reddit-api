@@ -4,16 +4,15 @@
   "description": "Retrieves 25 hot r/programming posts and outputs to the browser.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "node browser/views/styles/compile_scss.js"
   },
   "author": "Dylan Landry",
   "license": "MIT",
   "dependencies": {
     "data-store": "^3.0.3",
     "express": "^4.16.3",
-    "pug": "^2.0.3"
-  },
-  "devDependencies": {
+    "pug": "^2.0.3",
     "sass": "^1.10.1"
   }
 }

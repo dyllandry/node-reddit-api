@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "node browser/views/styles/compile_scss.js"
+    "prepare": "node node_modules/.bin/sass browser/views/styles/styles.scss browser/views/styles/styles.css"
   },
   "author": "Dylan Landry",
   "license": "MIT",

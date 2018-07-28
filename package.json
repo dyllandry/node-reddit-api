@@ -12,5 +12,8 @@
     "data-store": "^3.0.3",
     "express": "^4.16.3",
     "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "sass": "^1.10.1"
   }
 }

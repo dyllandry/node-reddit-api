@@ -4,6 +4,8 @@ const Express = require('express');
 const App = Express();
 // Node's path module for constructing file paths appropriate for system.
 const Path = require('path');
+// Used to open the browser.
+const Opn = require('opn');
 
 // Setting Express view engine to pug package, they integrate with eachother.
 App.set('view engine', 'pug');
@@ -15,8 +17,6 @@ App.use(Express.static(Path.join('browser', 'views', 'fonts')));
 
 // Set '/' route for GET HTTP requests w/ express. Lookup routing if confused.
 App.get('/', (request, response) => {
-    // UPGRADE: Log in a log.txt file instead.
-    console.log('\nServing GET request on "/"');
 
     // JavaScript promises, they're confusing at first.
     RedditApi.Authenticate().then(token => {
@@ -29,9 +29,15 @@ App.get('/', (request, response) => {
     }).catch(logError);  
 });
 
+App.get('/about', (request, response) => {
+    // about.pug uses include with absolute file name, requiring basedir option.
+    response.render('about', {basedir: __dirname});
+});
+
 // Start listening for requests from localhost:3000
 App.listen('3000', () => {
     console.log('Express listening on port 3000...');
+    Opn('http://localhost:3000');
 });
 
 function logError(error) {

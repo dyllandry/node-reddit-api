@@ -23,7 +23,6 @@ function GetHot(token, subreddit = 'programming', limit = 25) {
             })
             response.on('end', () => {
                 const jsonBody = JSON.parse(responseBody);
-                console.log('Posts retrieved');
 
                 // Convert post's unix times to readable ones.
                 jsonBody.data.children.forEach(post => {

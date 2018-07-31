@@ -1,8 +1,6 @@
 include includes/head.pug
 body
     #mainContent
-        h1 r/programming
-            span.priority /hot
-        .mainContent
-            each post in posts
-                include includes/post.pug
+        include includes/header.pug
+        each post in posts
+            include includes/post.pug

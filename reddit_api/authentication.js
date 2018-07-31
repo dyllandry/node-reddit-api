@@ -36,7 +36,6 @@ function Authenticate() {
             // Convert completed response string to json on 'end' event.
             response.on('end', () => {
                 const jsonBody = JSON.parse(responseBody);
-                console.log("Token retrieved");
                 resolve(jsonBody.access_token);
             });
         });

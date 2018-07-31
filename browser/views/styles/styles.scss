@@ -24,13 +24,31 @@ body {
     margin: 0px 0 0 0;
     font-family: 'Roboto-Regular';
 
-    #mainContent {
+    #mainContent, #readme {
         background-color: $foreground;
         max-width: 800px;
         margin: 50px auto 50px auto;
-        padding: 0 10px 0 10px;
+        padding-right: 10px;
+        padding-left: 10px;
         border-radius: 5px;
         box-shadow: black 0px 0px 10px -5px;
+    }
+
+    #mainContent {
+    
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            #about {
+                color: $priority;
+            }
+
+            #about:hover {
+                text-decoration: underline;
+            }
+        }
 
         h1 {
             margin: 0px 0 15px 5px;
@@ -113,4 +131,33 @@ a, a:visited {
 .priority {
     color: $priority;
     font-family: 'Roboto-Regular';
+}
+
+#readme {
+    padding-bottom: 15px;
+
+    h1 {
+
+        padding: 10px 0 0 5px;
+
+        a{
+            font-family: 'Roboto-Medium';
+            color: $priority;
+        }
+    }
+
+    h2, p, li {
+        color: $primary;
+    }
+
+    a {
+        color: $priority;
+    }
+
+    code {
+        background-color: black;
+        color: green;
+        padding: 3px;
+        border-radius: 4px;
+    }
 }

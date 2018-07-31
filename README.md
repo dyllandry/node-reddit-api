@@ -1,10 +1,10 @@
-# [node-reddit-api](/)
+# [node-reddit-api](https://github.com/dyllandry/node-reddit-api)
 This project was [Dylan Landry's](https://github.com/dyllandry) first time *successfully* utilizing an API.
 
 ## What it Does
-Lists the 25 hot posts from [r/Programming](https://www.reddit.com/r/programming/hot) in your browser, including score, date, and title.
+Lists the 25 hot posts from [r/Programming](https://www.reddit.com/r/programming/hot) in your browser, including score, date, and title. [Github Repository](https://github.com/dyllandry/node-reddit-api)
 
-![](public/images/Final_Screen_Shot.png)
+![](final.png)
 
 ## Prerequisites
 - Install [Node.js](https://nodejs.org/en/)

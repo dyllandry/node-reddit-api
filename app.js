@@ -20,12 +20,12 @@ App.get('/', (request, response) => {
 
     // JavaScript promises, they're confusing at first.
     RedditApi.Authenticate().then(token => {
-        RedditApi.GetHot(token).then(posts  => {
+        return RedditApi.GetHot(token).then(posts  => {
             
             // Display browser/views/index.pug as html and insert posts data. 
             response.render('index', {posts: posts});
 
-        }).catch(logError);
+        });
     }).catch(logError);  
 });
 

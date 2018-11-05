@@ -4,9 +4,10 @@
   "description": "Retrieves 25 hot r/programming posts and outputs to the browser.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "node node_modules/.bin/sass browser/views/styles/styles.scss browser/views/styles/styles.css",
-    "css:watch": "node node_modules/.bin/sass --watch browser/views/styles/styles.scss browser/views/styles/styles.css"
+    "postinstall": "npm run css:build",
+    "css:build": "node_modules/.bin/sass ./browser/views/styles/styles.scss ./browser/views/styles/styles.css",
+    "css:watch": "node_modules/.bin/sass --watch browser/views/styles/styles.scss browser/views/styles/styles.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dylan Landry",
   "license": "MIT",

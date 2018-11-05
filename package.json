@@ -4,6 +4,7 @@
   "description": "Retrieves 25 hot r/programming posts and outputs to the browser.",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "postinstall": "npm run css:build",
     "css:build": "node_modules/.bin/sass ./browser/views/styles/styles.scss ./browser/views/styles/styles.css",
     "css:watch": "node_modules/.bin/sass --watch browser/views/styles/styles.scss browser/views/styles/styles.css",

@@ -12,11 +12,11 @@ Lists the 25 hot posts from [r/Programming](https://www.reddit.com/r/programming
 
 ## Install
 1. Use terminal to navigate to the directory this README is in.
-1. Execute `sudo npm install` to install necessary packages.
+1. Execute `npm install` to install necessary packages.
 
 ## Usage
 1. Use terminal to navigate to the directory this README is in.
-1. Execute `node app.js`
+1. Execute `npm start`
 
 ## Contribute
 Contributions to the readability and simplicity of my code are welcomed. Just submit a pull request!
